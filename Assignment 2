@@ -1,0 +1,158 @@
+
+
+### 1) Accept 5 subjects' marks (Hindi, English, Math, Physics, Chemistry) out of 500 and display the grade of the student.
+
+```java
+import java.util.Scanner;
+
+public class StudentGrade {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Hindi marks: ");
+        int hindi = scanner.nextInt();
+        System.out.print("Enter English marks: ");
+        int english = scanner.nextInt();
+        System.out.print("Enter Math marks: ");
+        int math = scanner.nextInt();
+        System.out.print("Enter Physics marks: ");
+        int physics = scanner.nextInt();
+        System.out.print("Enter Chemistry marks: ");
+        int chemistry = scanner.nextInt();
+
+        int totalMarks = hindi + english + math + physics + chemistry;
+        int percentage = (totalMarks * 100) / 500;
+
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.println("Percentage: " + percentage + "%");
+
+        if (percentage >= 85) {
+            System.out.println("Grade: Excellent");
+        } else if (percentage >= 70) {
+            System.out.println("Grade: Very Good");
+        } else if (percentage >= 55) {
+            System.out.println("Grade: Good");
+        } else if (percentage >= 40) {
+            System.out.println("Grade: Poor");
+        } else {
+            System.out.println("Grade: Very Poor");
+        }
+    }
+}
+```
+
+### 2) Accept four numbers from the user and display the largest one.
+
+```java
+import java.util.Scanner;
+
+public class LargestNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+        System.out.print("Enter third number: ");
+        int num3 = scanner.nextInt();
+        System.out.print("Enter fourth number: ");
+        int num4 = scanner.nextInt();
+
+        int largest = num1;
+        if (num2 > largest) {
+            largest = num2;
+        }
+        if (num3 > largest) {
+            largest = num3;
+        }
+        if (num4 > largest) {
+            largest = num4;
+        }
+
+        System.out.println("The largest number is: " + largest);
+    }
+}
+```
+
+### 3) Accept age of the user and display a message based on the condition.
+
+```java
+import java.util.Scanner;
+
+public class BloodDonation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        if (age < 18) {
+            System.out.println("You must be at least 18 years old to donate blood");
+        } else {
+            System.out.print("Enter your weight: ");
+            double weight = scanner.nextDouble();
+
+            if (weight < 50.0) {
+                System.out.println("You must weigh at least 50 kilograms to donate blood");
+            } else {
+                System.out.println("You are eligible to donate blood");
+            }
+        }
+    }
+}
+```
+
+### 4) Accept an integer value in variable `n` and display specific messages based on the value of `n`.
+
+```java
+import java.util.Scanner;
+
+public class WeirdCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int n = scanner.nextInt();
+
+        if (n % 2 != 0) {
+            System.out.println("Weird");
+        } else if (n >= 2 && n <= 5) {
+            System.out.println("Not Weird");
+        } else if (n >= 6 && n <= 20) {
+            System.out.println("Weird");
+        } else if (n > 20) {
+            System.out.println("Not Weird");
+        }
+    }
+}
+```
+
+### 5) Accept total income of the user and calculate income tax based on the given tax slabs.
+
+```java
+import java.util.Scanner;
+
+public class IncomeTaxCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your total income: ");
+        double income = scanner.nextDouble();
+        double tax = 0;
+
+        if (income <= 250000) {
+            tax = 0;
+        } else if (income <= 500000) {
+            tax = (income - 250000) * 0.05;
+        } else if (income <= 1000000) {
+            tax = (500000 - 250000) * 0.05 + (income - 500000) * 0.20;
+        } else {
+            tax = (500000 - 250000) * 0.05 + (1000000 - 500000) * 0.20 + (income - 1000000) * 0.30;
+        }
+
+        System.out.println("Income Tax: " + tax);
+    }
+}
+```
+
